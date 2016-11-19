@@ -4,6 +4,7 @@ Save your Trello lists to your own server.
 ## Features
 - Free Forever
 - One-file script :)
+- CAN AVOID THE Cross-Domain ISSUE!
 - Configurable in few seconds
 - Edit few lines to create tons of files with all the data containted in the cards
 - Just call the trello2file.php file one time to generate/update all the json files
@@ -16,6 +17,7 @@ Save your Trello lists to your own server.
 ### Configuration
 - edit trello2file.php file
 - put your api key ([take it from here](https://trello.com/app-key)) and the token key (from the app-key link click on the "Token" link a few lines below the key)
+- optionally you can decide to use jsonp format to avoid the annoying cross-domain issue ([little help here](https://github.com/portapipe/Trello2File/wiki/Cross-Domain-issue,-avoid-it-with-jsonp))
 - add every lists you want to create a file for like
 ```js
 var lists = {
