@@ -46,6 +46,7 @@ if(isset($_POST['id'])){
 			function success(data,response){
 				if(response=="success"){
 					$.post( "trello2file.php", { id: ""+index, content: JSON.stringify(data) } );
+					console.log("- Processing "+index+".json")
 				}
 			}
 			function error(error){
