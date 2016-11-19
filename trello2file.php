@@ -11,8 +11,12 @@ $token = "YOUR_TOKEN";
 	}
 </script>
 
-
-
+<?php
+/* jsonp avoid the cross-domain issue, change to "true" if you have that issue
+   so the json data will be closed into a function with the name of the list
+   - example: FileNameBasedOnColumn1(..json..)
+*/ $use_jsonp = false;
+?>
 
 
 <!-- DO NOT EDIT DOWN HERE IF YOU DON'T KNOW WHAT YOU ARE DOING :) -->
@@ -22,6 +26,7 @@ $url = "https://api.trello.com/1/client.js?key=$key&token=$token";
 if(isset($_POST['id'])){
 	$id = $_POST['id'];
 	$content = $_POST['content'];
+	if($use_jsonp){ $content = $_POST['id']."(".$content.")"; }
 	$myfile = fopen("jsons/$id.json", "w") or die("Unable to open file $id!");
 	$txt = $content;
 	fwrite($myfile, $txt);
