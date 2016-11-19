@@ -1,5 +1,7 @@
-<!-- YOU MUST EDIT THESE LINES WITH YOUR KEY AND TOKEN -->
-<?php
+<!--no edit here - IGNORE THE NEXT LINE-->
+<?php if(isset($_GET['file'])){ $id = $_GET['file']; $myfile = file_get_contents("jsons/$id.json", "w") or die("Unable to open file $id!");	if(isset($_GET['callback'])){ echo $_GET['callback']."(".$myfile.");"; }else{ echo $myfile; }die;}
+
+/* - YOU MUST EDIT THESE LINES BELOW WITH YOUR KEY AND TOKEN - */
 $key = "YOUR_KEY";
 $token = "YOUR_TOKEN";
 ?>
